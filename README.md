@@ -1,8 +1,9 @@
-# Vue 3 + Vite
+# Projecte final receptes
 
-This template should help get you started developing with Vue 3 in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+Aquest Prpojecte, vol incoprporar tres grans seccions, de buscar recoeptes, la de crear i guardar les teves receptes i la de tenir-les guardades en preferits. Opcionalmemnt poder dir els ingredients que disposo i que es mostri les receptes que puc fer.
 
-## Recommended IDE Setup
+## Primers pasos
 
-- [VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=johnsoncodehk.volar)
-# Projecte_Final
+1. S'ha de baixar amb git clone del gitHub.
+2. Instalar el router
+3. npm run dev, per iniciar vue i visualitzar.
