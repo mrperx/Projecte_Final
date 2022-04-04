@@ -1,4 +1,5 @@
 <template>
+  <NavBar />
   <h1 class="border bg-slate-400">APP</h1>
 </template>
 
