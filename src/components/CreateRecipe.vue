@@ -20,7 +20,14 @@
 
     <div class="items-center">
       <h4>Process</h4>
-      <textarea class="border">Process...</textarea>
+      <textarea class="border w-full p-3 mb-3">Process...</textarea>
+      <div class="text-right">
+        <button
+          class="border-2 shadow-md text-gray-600 border-lime-500 rounded-lg bg-lime-300 py-2 px-3"
+        >
+          Submit
+        </button>
+      </div>
     </div>
   </div>
 </template>
