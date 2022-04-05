@@ -1,7 +1,17 @@
-<template></template>
+<template>
+  <div>
+    <h2>Receptes</h2>
+  </div>
+</template>
 
 <script>
-export default {};
+export default {
+  data() {
+    return {
+      data: null,
+      loading: false,
+      error: null,
+    };
+  },
+};
 </script>
-
-<style></style>

@@ -1,16 +1,18 @@
 <template>
   <NavBar />
-  <h1 class="border bg-slate-400">APP</h1>
+  <div class="container mx-auto p-4">
+    <h1 class="mb-4 text-center">Recept App</h1>
+    <RouterView />
+  </div>
 </template>
 
 <script>
-import Home from "./components/Home.vue";
 import NavBar from "./components/NavBar.vue";
+
 export default {
   name: "App",
   components: {
-    home: Home,
-    navBar: NavBar,
+    NavBar,
   },
 };
 </script>

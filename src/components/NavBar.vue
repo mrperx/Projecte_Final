@@ -1,13 +1,7 @@
 <template>
-  <div>
-    <div v-if="loading">Loading...</div>
-    <div v-if="error" class="text-red-600">
-      {{ error }}
-    </div>
-    <div class="flex justify-between">
-      <button>Home</button>
-      <button>Preferits</button>
-    </div>
+  <div class="flex items-center justify-between bg-gray-100 px-4 shadow">
+    <RouterLink to="/" class="py-4">Home</RouterLink>
+    <RouterLink to="/favorites">Favorites</RouterLink>
   </div>
 </template>
 
@@ -22,5 +16,3 @@ export default {
   },
 };
 </script>
-
-<style></style>
