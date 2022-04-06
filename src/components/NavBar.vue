@@ -1,6 +1,6 @@
 <template>
   <div class="flex items-center justify-between bg-gray-100 px-4 shadow">
-    <button class="focus:bg-red-700">
+    <button class="hover:bg-lime-600 rounded p-3">
       <RouterLink to="/" class="py-4">Home</RouterLink>
     </button>
     <button>

@@ -1,7 +1,11 @@
 <template>
   <div>
     <div class="container">
-      <input @keyup.enter="sendApiRequest()" class="border w-full" />
+      <input
+        type="text"
+        @keyup.enter="sendApiRequest()"
+        class="border w-full"
+      />
       <button @click="sendApiRequest()">Search</button>
     </div>
   </div>
@@ -24,7 +28,7 @@ export default {
       const Api_Key = "8567c4564eecc301097726808737edb6";
       try {
         const { data } = await axios(
-          `https://api.edamam.com/api/search?q=biryani&app_id=${APP_ID}&app_key=${Api_Key}`
+          `https://api.edamam.com/search?q=tomato&app_id=${APP_ID}&app_key=${Api_Key}`
         );
         this.data = data;
       } catch (error) {
