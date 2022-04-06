@@ -1,10 +1,17 @@
 <template>
   <div class="flex items-center justify-between bg-gray-100 px-4 shadow">
-    <RouterLink to="/" class="py-4">Home</RouterLink>
-
-    <RouterLink to="/create-recipe">Create Recipes</RouterLink>
-
-    <div>Search Recipe <input type="text" class="border-2 bg-green-300" /></div>
+    <button class="focus:bg-red-700">
+      <RouterLink to="/" class="py-4">Home</RouterLink>
+    </button>
+    <button>
+      <RouterLink to="/create-recipe">Create Recipes</RouterLink>
+    </button>
+    <div>
+      Search Recipe
+      <RouterLink to="/search-recipe">
+        <input type="text" class="border-2 bg-green-300"
+      /></RouterLink>
+    </div>
 
     <RouterLink to="/favorites">Favorites</RouterLink>
   </div>
