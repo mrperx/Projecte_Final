@@ -3,12 +3,14 @@
     <div class="container">
       <input
         type="text"
+        v-model="buscar"
         @keyup.enter="sendApiRequest()"
         class="border w-full"
       />
       <button @click="sendApiRequest()">Search</button>
     </div>
   </div>
+  <div></div>
 </template>
 
 <script>
@@ -37,6 +39,9 @@ export default {
         this.loading = false;
       }
     },
+  },
+  function: {
+    useApiData(data) {},
   },
 };
 </script>
