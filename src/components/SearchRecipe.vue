@@ -4,13 +4,15 @@
       <input
         type="text"
         v-model="buscar"
-        @keyup.enter="sendApiRequest()"
+        @keyup.enter="sendApiRequest"
         class="border w-full"
       />
       <button @click="sendApiRequest()">Search</button>
     </div>
   </div>
-  <div></div>
+  <div v-for="ingredient in data?.hits" key="ingredient">
+    {{ ingredient.image }}
+  </div>
 </template>
 
 <script>
@@ -21,6 +23,7 @@ export default {
       data: null,
       loading: false,
       error: null,
+      buscar: "",
     };
   },
   methods: {
@@ -30,7 +33,7 @@ export default {
       const Api_Key = "8567c4564eecc301097726808737edb6";
       try {
         const { data } = await axios(
-          `https://api.edamam.com/search?q=tomato&app_id=${APP_ID}&app_key=${Api_Key}`
+          `https://api.edamam.com/search?q=${this.buscar}&app_id=${APP_ID}&app_key=${Api_Key}`
         );
         this.data = data;
       } catch (error) {
