@@ -84,8 +84,8 @@ export default {
     this.favoritesStore.favoriteRecipes.push(recipe);
   },
 
-  mounted() {
-    this.getRecipes();
-  },
+  // mounted() {
+  //   this.getRecipes();
+  // },
 };
 </script>
