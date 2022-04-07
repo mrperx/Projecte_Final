@@ -13,7 +13,9 @@
   <div v-for="ingredient in data?.hits" :key="ingredient">
     <div class="p-2 grid grid-cols-3 bg-gray-300">
       <div class="bg-green-300">
-        <p><img :src="ingredient.recipe.image" /></p>
+        <p>
+          <img :src="ingredient.recipe.image" class="h-52 w-52 rounded-t-lg" />
+        </p>
         <p v-for="i in ingredient.recipe.ingredientLines" :key="i">
           {{ i }}
         </p>
