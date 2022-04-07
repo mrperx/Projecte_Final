@@ -10,8 +10,14 @@
       <button @click="sendApiRequest()">Search</button>
     </div>
   </div>
-  <div v-for="ingredient in data?.hits" key="ingredient">
-    {{ ingredient.image }}
+  <div v-for="ingredient in data?.hits" :key="ingredient">
+    <div class="p-2">
+      <p><img :src="ingredient.recipe.image" /></p>
+      <p v-for="i in ingredient.recipe.ingredientLines" :key="i">
+        {{ i }}
+      </p>
+      <p>{{ ingredient.recipe.calories }}</p>
+    </div>
   </div>
 </template>
 
