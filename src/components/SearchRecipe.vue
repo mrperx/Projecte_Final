@@ -11,12 +11,14 @@
     </div>
   </div>
   <div v-for="ingredient in data?.hits" :key="ingredient">
-    <div class="p-2">
-      <p><img :src="ingredient.recipe.image" /></p>
-      <p v-for="i in ingredient.recipe.ingredientLines" :key="i">
-        {{ i }}
-      </p>
-      <p>{{ ingredient.recipe.calories }}</p>
+    <div class="p-2 grid grid-cols-3 bg-gray-300">
+      <div class="bg-green-300">
+        <p><img :src="ingredient.recipe.image" /></p>
+        <p v-for="i in ingredient.recipe.ingredientLines" :key="i">
+          {{ i }}
+        </p>
+        <p>{{ ingredient.recipe.calories }}</p>
+      </div>
     </div>
   </div>
 </template>
