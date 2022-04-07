@@ -1,25 +1,44 @@
 <template>
   <div>
-    <div class="container">
+    <div class="container grid grid-cols-4 gap-3">
       <input
         type="text"
         v-model="buscar"
         @keyup.enter="sendApiRequest"
-        class="border w-full"
+        class="border rounded-md w-full col-start-2 col-span-2"
       />
-      <button @click="sendApiRequest()">Search</button>
+      <button
+        class="rounded border text-sm bg-lime-500 py-2 px-3 w-20"
+        @click="sendApiRequest()"
+      >
+        Search
+      </button>
     </div>
   </div>
-  <div v-for="ingredient in data?.hits" :key="ingredient">
-    <div class="p-2 grid grid-cols-3 bg-gray-300">
+  <div class="p-2 grid grid-cols-1 md:grid-cols-3 gap-3 mt-7 bg-gray-300">
+    <div v-for="ingredient in data?.hits" :key="ingredient">
       <div class="bg-green-300">
         <p>
           <img :src="ingredient.recipe.image" class="h-52 w-52 rounded-t-lg" />
         </p>
-        <p v-for="i in ingredient.recipe.ingredientLines" :key="i">
-          {{ i }}
-        </p>
-        <p>{{ ingredient.recipe.calories }}</p>
+        <p class="font-bold text-lg p-2">{{ ingredient.recipe.label }}</p>
+        <div class="p-2">
+          <h3 class="font-bold text-lg">Ingredients:</h3>
+          <p v-for="i in ingredient.recipe.ingredientLines" :key="i">
+            {{ i }}
+          </p>
+        </div>
+        <div class="p-2">
+          <h4 class="font-bold text-base">Nutritional information:</h4>
+          <p>{{ ingredient.recipe.calories }} kcal</p>
+        </div>
+        <RuterLink to="/favorites">
+          <button
+            class="border justify-end shadow-sm px-3 py-2 bg-lime-200 rounded-lg m-2"
+          >
+            Add Favorites
+          </button>
+        </RuterLink>
       </div>
     </div>
   </div>
@@ -27,7 +46,14 @@
 
 <script>
 import axios from "axios";
+import { useFavorites } from "../stores/favorites";
+
 export default {
+  setup() {
+    const favoritesStore = useFavorites();
+
+    return { favoritesStore };
+  },
   data() {
     return {
       data: null,
@@ -53,8 +79,13 @@ export default {
       }
     },
   },
-  function: {
-    useApiData(data) {},
+
+  addToFavorites(film) {
+    this.favoritesStore.favoriteRecipes.push(recipe);
+  },
+
+  mounted() {
+    this.getRecipes();
   },
 };
 </script>
