@@ -6,4 +6,8 @@ export const useFavorites = defineStore("favorites", {
   state: () => ({
     favoriteRecipes: [],
   }),
+  getters: {},
+  actions: {
+    addToCart(state, payload) {},
+  },
 });

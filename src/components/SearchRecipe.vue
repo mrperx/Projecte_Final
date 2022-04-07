@@ -35,7 +35,7 @@
 
         <button
           class="border justify-end shadow-sm px-3 py-2 bg-lime-200 rounded-lg m-2"
-          @click="addToFacorites(recipe)"
+          @click="addToFavorites(recipe)"
         >
           Add Favorites
         </button>
@@ -63,6 +63,9 @@ export default {
     };
   },
   methods: {
+    addToFavorites(recipe) {
+      this.favoritesStore.favoriteRecipes.push(recipe);
+    },
     async sendApiRequest() {
       this.loading = true;
       const APP_ID = "38ba7739";
@@ -80,12 +83,8 @@ export default {
     },
   },
 
-  addToFavorites(recipe) {
-    this.favoritesStore.favoriteRecipes.push(recipe);
+  mounted() {
+    this.sendApiRequest();
   },
-
-  // mounted() {
-  //   this.getRecipes();
-  // },
 };
 </script>

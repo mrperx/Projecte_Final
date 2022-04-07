@@ -4,7 +4,7 @@ import App from "./App.vue";
 import "./index.css";
 import { routes } from "./routes.js";
 import { createRouter, createWebHistory } from "vue-router";
-import { library } from "@fortawesome/fontawesome-svg-core";
+// import { library } from "@fortawesome/fontawesome-svg-core";
 
 import { faUserSecret } from "@fortawesome/free-solid-svg-icons";
 import { createPinia } from "pinia";
@@ -16,7 +16,7 @@ const router = createRouter({
 });
 
 app.use(router);
-library.add(faUserSecret);
+// library.add(faUserSecret);
 
 app.use(createPinia());
 
