@@ -32,13 +32,13 @@
           <h4 class="font-bold text-base">Nutritional information:</h4>
           <p>{{ ingredient.recipe.calories }} kcal</p>
         </div>
-        <RuterLink to="/favorites">
-          <button
-            class="border justify-end shadow-sm px-3 py-2 bg-lime-200 rounded-lg m-2"
-          >
-            Add Favorites
-          </button>
-        </RuterLink>
+
+        <button
+          class="border justify-end shadow-sm px-3 py-2 bg-lime-200 rounded-lg m-2"
+          @click="addToFacorites(recipe)"
+        >
+          Add Favorites
+        </button>
       </div>
     </div>
   </div>
@@ -80,7 +80,7 @@ export default {
     },
   },
 
-  addToFavorites(film) {
+  addToFavorites(recipe) {
     this.favoritesStore.favoriteRecipes.push(recipe);
   },
 
