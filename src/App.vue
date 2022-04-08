@@ -1,10 +1,12 @@
 <template>
   <NavBar />
-  <div class="container mx-auto p-4">
-    <h1 class="mb-4 text-center">
-      App Recipe
-      <!-- <font-awesome-icon icon="fa-solid fa-seedling" />e -->
-    </h1>
+  <div class="bg-cover bg-[url('/recetas-veganas.jpeg')]">
+    <div class="container mx-auto p-4">
+      <h1 class="mb-4 text-center">
+        App Recipe
+        <!-- <font-awesome-icon icon="fa-solid fa-seedling" />e -->
+      </h1>
+    </div>
     <RouterView />
   </div>
 </template>
