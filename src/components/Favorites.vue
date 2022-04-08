@@ -1,7 +1,7 @@
 <template>
   <h2>Favorites</h2>
 
-  <div class="p-2 grid grid-cols-1 md:grid-cols-3 gap-3 mt-7 bg-gray-300">
+  <div class="p-2 grid grid-cols-1 md:grid-cols-4 gap-3 mt-7 bg-gray-300">
     <div v-for="recipe in recipes" :key="recipe">
       <div class="bg-green-300">
         <p>
