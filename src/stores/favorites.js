@@ -9,6 +9,7 @@ export const useFavorites = defineStore("favorites", {
 
   actions: {
     add(recipe) {
+      recipe.totalNutrients = null;
       this.favoriteRecipes.push(recipe);
       storeData("favorites", this.favoriteRecipes);
     },

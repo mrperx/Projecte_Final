@@ -11,7 +11,7 @@
         class="rounded border text-sm bg-lime-500 py-2 px-3 w-20"
         @click="sendApiRequest()"
       >
-        Search
+        <i class="fa-solid fa-magnifying-glass"></i>
       </button>
     </div>
   </div>
