@@ -10,7 +10,7 @@ export const useFavorites = defineStore("favorites", {
   actions: {
     add(recipe) {
       this.favoriteRecipes.push(recipe);
-      storeData("favorites", this.favoriteRecipes);
+      // ⁄storeData("favorites", this.favoriteRecipes);
     },
     async get() {
       // obtener de Firebase
