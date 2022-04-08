@@ -2,21 +2,21 @@
   <h2>Favorites</h2>
 
   <div class="p-2 grid grid-cols-1 md:grid-cols-3 gap-3 mt-7 bg-gray-300">
-    <div v-for="ingredient in data?.hits" :key="ingredient">
+    <div v-for="recipe in recipes" :key="recipe">
       <div class="bg-green-300">
         <p>
-          <img :src="ingredient.recipe.image" class="h-52 w-52 rounded-t-lg" />
+          <img :src="recipe.image" class="h-52 w-52 rounded-t-lg" />
         </p>
-        <p class="font-bold text-lg p-2">{{ ingredient.recipe.label }}</p>
+        <p class="font-bold text-lg p-2">{{ recipe.label }}</p>
         <div class="p-2">
           <h3 class="font-bold text-lg">Ingredients:</h3>
-          <p v-for="i in ingredient.recipe.ingredientLines" :key="i">
+          <p v-for="i in recipe.ingredientLines" :key="i">
             {{ i }}
           </p>
         </div>
         <div class="p-2">
           <h4 class="font-bold text-base">Nutritional information:</h4>
-          <p>{{ ingredient.recipe.calories }} kcal</p>
+          <p>{{ recipe.calories }} kcal</p>
         </div>
       </div>
     </div>

@@ -15,7 +15,9 @@
       </button>
     </div>
   </div>
-  <div class="p-2 grid grid-cols-1 md:grid-cols-3 gap-3 mt-7 bg-gray-300">
+  <div
+    class="p-2 grid grid-cols-1 md:grid-cols-4 gap-3 mt-7 bg-gray-300 border shadow"
+  >
     <div v-for="ingredient in data?.hits" :key="ingredient">
       <div class="bg-green-300">
         <p>
@@ -35,7 +37,7 @@
 
         <button
           class="border justify-end shadow-sm px-3 py-2 bg-lime-200 rounded-lg m-2"
-          @click="addToFavorites(recipe)"
+          @click="addToFavorites(ingredient.recipe)"
         >
           Add Favorites
         </button>
