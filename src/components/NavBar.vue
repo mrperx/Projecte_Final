@@ -8,6 +8,7 @@
     </button>
 
     <RouterLink to="/favorites">Favorites</RouterLink>
+    <RouterLink to="/login">Log in</RouterLink>
   </div>
 </template>
 

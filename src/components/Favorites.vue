@@ -18,6 +18,9 @@
           <h4 class="font-bold text-base">Nutritional information:</h4>
           <p>{{ recipe.calories }} kcal</p>
         </div>
+        <button @click="removeElement(recipe)" class="px-3 py-2 text-lg">
+          <i class="fa-solid fa-trash-can"></i>
+        </button>
       </div>
     </div>
   </div>
@@ -41,6 +44,10 @@ export default {
     addToFavorites(recipe) {
       this.favoritesStore.favoriteRecipes.push(recipe);
     },
+  },
+
+  removeElement(index) {
+    this.items.splice(index, 1);
   },
 };
 </script>
