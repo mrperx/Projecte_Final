@@ -11,11 +11,19 @@
 
 <script>
 import NavBar from "./components/NavBar.vue";
-
+import { useFavorites } from "./stores/favorites";
 export default {
   name: "App",
   components: {
     NavBar,
+  },
+  setup() {
+    const favoritesStore = useFavorites();
+
+    return { favoritesStore };
+  },
+  mounted() {
+    this.favoritesStore.get();
   },
 };
 </script>

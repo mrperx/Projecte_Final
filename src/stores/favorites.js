@@ -1,5 +1,5 @@
 import { defineStore } from "pinia";
-
+import { storeData, getData } from "./firebase";
 // useStore could be anything like useUser, useCart
 // the first argument is a unique id of the store across your application
 export const useFavorites = defineStore("favorites", {
@@ -8,6 +8,13 @@ export const useFavorites = defineStore("favorites", {
   }),
   getters: {},
   actions: {
-    addToCart(state, payload) {},
+    add(recipe) {
+      this.favoriteRecipes.push(recipe);
+      storeData("favorites", this.favoriteRecipes);
+    },
+    async get() {
+      // obtener de Firebase
+      this.favoriteRecipes = await getData("favorites");
+    },
   },
 });

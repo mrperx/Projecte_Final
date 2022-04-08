@@ -19,3 +19,22 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 // Get a reference to the database service
 const db = getDatabase(app);
+
+export function storeData(dataset, payload) {
+  set(ref(db, dataset), payload);
+}
+
+export async function getData(dataset) {
+  const dbRef = ref(db);
+  try {
+    const snapshot = await get(child(dbRef, dataset));
+
+    if (snapshot.exists()) {
+      return snapshot.val();
+    } else {
+      console.log("No data available");
+    }
+  } catch (error) {
+    console.error(error);
+  }
+}

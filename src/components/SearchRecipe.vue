@@ -66,7 +66,7 @@ export default {
   },
   methods: {
     addToFavorites(recipe) {
-      this.favoritesStore.favoriteRecipes.push(recipe);
+      this.favoritesStore.add(recipe);
     },
     async sendApiRequest() {
       this.loading = true;
