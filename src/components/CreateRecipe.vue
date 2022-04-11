@@ -10,39 +10,46 @@
     >
       Create Recipe
     </h2>
-
-    <div class="grid grid-cols-2 container bg-cyan-200 p-3">
-      <div>
-        <h4>Title : <input v-model="title" class="border" /></h4>
-        Image<input v-model="image" class="border" />
-        <!-- //crear v-for per anar agregant ingredients i quantitat-->
-        <h3>Ingredients</h3>
-        <div class="grid grod-cols-2">
-          <div v-for="ingredient in ingredients" :key="ingredient">
-            <input placeholder="amount" class="border" />
-            <textarea placeholder="Ingredients" class="border"> </textarea>
+    <div class="grid grid-cols-3">
+      <div
+        class="col-start-2 col-span-1 container bg-[url('/hojas.gif')] opacity-50 p-3"
+      >
+        <div>
+          <h4 class="my-2">Title: <input v-model="title" class="border" /></h4>
+          Image: <input v-model="image" class="border my-2" />
+          <!-- //crear v-for per anar agregant ingredients i quantitat-->
+          <h3>Ingredients</h3>
+          <div class="my-2">
+            <div v-for="ingredient in ingredients" :key="ingredient">
+              <div class="items-start grid grid-cols-2">
+                <div><input placeholder="Amount" class="border" /></div>
+                <div>
+                  <textarea placeholder="Ingredient" class="border"></textarea>
+                </div>
+              </div>
+            </div>
+            <button
+              @click="addtoIngredient"
+              class="text-lime-300 bg-white rounded-full shadow shadow-lime-100 hover:bg-green-200 w-8 h-8"
+            >
+              <i class="fa-solid fa-circle-plus"></i>
+            </button>
           </div>
-          <button
-            @click="addtoIngredient"
-            class="text-lime-300 bg-white rounded-full shadow shadow-lime-100 hover:bg-green-200 w-8 h-8"
-          >
-            <i class="fa-solid fa-circle-plus"></i>
-          </button>
+          <!-- </div> -->
         </div>
-        <!-- </div> -->
-      </div>
-    </div>
 
-    <div class="items-center">
-      <h4>Steps</h4>
-      <textarea v-model="steps" class="border w-full p-3 mb-3"></textarea>
-      <div class="text-right">
-        <button
-          @click="addToCreate()"
-          class="border-2 shadow-md text-gray-600 border-lime-500 rounded-lg bg-lime-300 py-2 px-3"
-        >
-          Submit
-        </button>
+        <div class="items-center">
+          <h4>Steps</h4>
+          <textarea v-model="steps" class="border w-full p-3 mb-3"></textarea>
+          <div class="text-right">
+            <button
+              @click="addToCreate()"
+              class="border-2 shadow-md text-gray-600 border-lime-500 rounded-lg bg-lime-300 py-2 px-3"
+            >
+              Submit
+            </button>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -61,11 +68,9 @@ export default {
     return {
       image: "",
       title: "",
-      ingredients: [,],
+      ingredients: [],
 
       steps: "",
-      // loading: false,
-      // error: null,
     };
   },
 
