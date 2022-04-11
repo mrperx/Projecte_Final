@@ -1,5 +1,9 @@
 <template>
   <div>
+    <div v-if="loading">Loading...</div>
+    <div v-if="error" class="text-red-600">
+      {{ error }}
+    </div>
     <div class="container grid grid-cols-4 gap-3">
       <input
         type="text"

@@ -9,7 +9,10 @@
     <button class="hover:bg-green-200 rounded px-2 py-1">
       <RouterLink to="/favorites">Favorites</RouterLink>
     </button>
-    <RouterLink to="/login">Log in</RouterLink>
+    <button class="hover:bg-green-200 rounded px-2 py-1">
+      <RouterLink to="/my-recipes">My recipes</RouterLink>
+    </button>
+    <!-- <RouterLink to="/login">Log in</RouterLink> -->
   </div>
 </template>
 

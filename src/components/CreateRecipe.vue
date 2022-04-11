@@ -1,5 +1,10 @@
 <template>
   <div class="container p-3 m-auto bg-slate-300">
+    <!-- <div v-if="loading">Loading...</div>
+    <div v-if="error" class="text-red-600">
+      {{ error }}
+    </div> -->
+
     <h2
       class="text-center italic font-semibold text-lime-500 shadow-gray-400 font-serif text-xl"
     >
@@ -14,7 +19,7 @@
         <h3>Ingredients</h3>
         <div class="grid grod-cols-2">
           <div v-for="ingredient in ingredients" :key="ingredient">
-            <input placeholder="amount" v-model="amount" class="border" />
+            <input placeholder="amount" class="border" />
             <textarea placeholder="Ingredients" class="border"> </textarea>
           </div>
           <button
@@ -59,6 +64,8 @@ export default {
       ingredients: [,],
 
       steps: "",
+      // loading: false,
+      // error: null,
     };
   },
 
@@ -73,7 +80,6 @@ export default {
       };
 
       this.addtoIngredient();
-      this.foto = null;
     },
     addToCreate() {
       let recipe = {
@@ -93,14 +99,5 @@ export default {
       this.ingredients.push(ingredient);
     },
   },
-  // ingredients(recipes) {
-  //   return this.ingredients.push(recipes);
-  // },
-
-  // computed: {
-  //   formValid() {
-  //     return ([name, ingredients, steps] = this.recipe);
-  //   },
-  // },
 };
 </script>
