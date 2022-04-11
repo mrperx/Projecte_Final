@@ -1,14 +1,23 @@
 <template>
   <NavBar />
-  <div class="bg-cover bg-[url('/recetas-veganas.jpeg')]">
-    <div class="container mx-auto p-4">
-      <h1 class="mb-4 text-center">
-        <div class="text-center">
-          <img src="/logo.jpeg" class="rounded-full h-24 w-24" />
-        </div>
-      </h1>
+  <div>
+    <div class="bg-cover bg-[url('/recetas-veganas.jpeg')] opacity-60">
+      <div class="container mx-auto p-4">
+        <h1 class="mb-4 text-center">
+          <div class="justify-center flex">
+            <RouterLink to="/">
+              <img
+                src="/logo.jpeg"
+                class="rounded-full h-24 w-24 text-center"
+              />
+            </RouterLink>
+          </div>
+        </h1>
+      </div>
     </div>
-    <RouterView />
+    <div class="mt-4">
+      <RouterView />
+    </div>
   </div>
 </template>
 

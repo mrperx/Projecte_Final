@@ -1,5 +1,7 @@
 <template>
-  <h2>Favorites</h2>
+  <h2 class="font-bold shadow text-center text-2xl text-gray-600">
+    Favorite recipes
+  </h2>
 
   <div class="p-2 grid grid-cols-1 md:grid-cols-4 gap-3 mt-7 bg-gray-300">
     <div v-for="recipe in recipes" :key="recipe">
@@ -38,6 +40,7 @@ export default {
 
     return { favoritesStore };
   },
+
   computed: {
     recipes() {
       return this.favoritesStore.favoriteRecipes;

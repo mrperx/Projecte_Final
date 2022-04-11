@@ -12,63 +12,84 @@
         Image<input v-model="image" class="border" />
         <!-- //crear v-for per anar agregant ingredients i quantitat-->
         <h3>Ingredients</h3>
-        <input placeholder="amount" v-model="amount" class="border" />
-        <textarea
-          placeholder="Ingredients"
-          v-model="ingrediemts"
-          class="border"
-        >
-Ingredients...</textarea
-        >
+        <div class="grid grod-cols-2">
+          <div v-for="ingredient in ingredients" :key="ingredient">
+            <input placeholder="amount" v-model="amount" class="border" />
+            <textarea placeholder="Ingredients" class="border"> </textarea>
+          </div>
+          <button
+            class="text-lime-300 bg-white rounded-full shadow shadow-lime-100 hover:bg-green-200 w-8 h-8"
+          >
+            <i class="fa-solid fa-circle-plus"></i>
+          </button>
+        </div>
+        <!-- </div> -->
       </div>
     </div>
 
     <div class="items-center">
       <h4>Steps</h4>
-      <textarea v-model="steps" class="border w-full p-3 mb-3">
-Steps...</textarea
-      >
+      <textarea v-model="steps" class="border w-full p-3 mb-3"></textarea>
       <div class="text-right">
         <button
-          @click="handleSubmit"
+          @click="addToCreate()"
           class="border-2 shadow-md text-gray-600 border-lime-500 rounded-lg bg-lime-300 py-2 px-3"
         >
           Submit
         </button>
-        <div v-for="(r, index) of recipes" :key="r.id">
-          <h1>{{ r.name }}</h1>
-          <h2>ingredients</h2>
-          <div class="content">{{ r.ingredients }}</div>
-          <h2>steps</h2>
-          <div class="content">{{ r.steps }}</div>
-          <button type="button" @click="deleteRecipe(index)">delete</button>
-        </div>
       </div>
     </div>
   </div>
 </template>
 
 <script>
+import { useCreate } from "../stores/createRecipe";
 export default {
+  setup() {
+    const createStore = useCreate();
+
+    return { createStore };
+  },
   name: "createRecipe",
   data() {
     return {
       image: "",
       title: "",
-      ingrediemts: "",
-      amount: "",
+      ingredients: [,
+
+      ],
+
       steps: "",
     };
   },
+
   methods: {
-    handleSubmit() {
-      this.$emit("createRecipe", {
+    addToCreate() {
+      let recipe = {
+        imatge: this.image,
         title: this.title,
-        ingrediemts: this.ingrediemts,
+        ingredients: this.ingredients,
         amount: this.amount,
-        process: this.process,
-      });
+        steps: this.steps,
+      };
+      this.createStore.addCreate(recipe);
     },
+    addtoIngredient(){
+      let ingredient = {
+        ingredient: this.ingredient ,
+        amount: this.amount,
+      }
+    },
+  },
+    // ingredients(recipes) {
+    //   return this.ingredients.push(recipes);
+    // },
+
+    // computed: {
+    //   formValid() {
+    //     return ([name, ingredients, steps] = this.recipe);
+    //   },
+    // },
   },
 };
 </script>
