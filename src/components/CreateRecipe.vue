@@ -18,6 +18,7 @@
             <textarea placeholder="Ingredients" class="border"> </textarea>
           </div>
           <button
+            @click="addtoIngredient"
             class="text-lime-300 bg-white rounded-full shadow shadow-lime-100 hover:bg-green-200 w-8 h-8"
           >
             <i class="fa-solid fa-circle-plus"></i>
@@ -55,41 +56,51 @@ export default {
     return {
       image: "",
       title: "",
-      ingredients: [,
-
-      ],
+      ingredients: [,],
 
       steps: "",
     };
   },
 
   methods: {
+    limpiarFormulario() {
+      this.recipe = {
+        image: "",
+        title: "",
+        ingredients: [],
+
+        steps: "",
+      };
+
+      this.addtoIngredient();
+      this.foto = null;
+    },
     addToCreate() {
       let recipe = {
         imatge: this.image,
-        title: this.title,
+
         ingredients: this.ingredients,
-        amount: this.amount,
+
         steps: this.steps,
       };
       this.createStore.addCreate(recipe);
     },
-    addtoIngredient(){
+    addtoIngredient() {
       let ingredient = {
-        ingredient: this.ingredient ,
+        ingredient: this.ingredient,
         amount: this.amount,
-      }
+      };
+      this.ingredients.push(ingredient);
     },
   },
-    // ingredients(recipes) {
-    //   return this.ingredients.push(recipes);
-    // },
+  // ingredients(recipes) {
+  //   return this.ingredients.push(recipes);
+  // },
 
-    // computed: {
-    //   formValid() {
-    //     return ([name, ingredients, steps] = this.recipe);
-    //   },
-    // },
-  },
+  // computed: {
+  //   formValid() {
+  //     return ([name, ingredients, steps] = this.recipe);
+  //   },
+  // },
 };
 </script>
