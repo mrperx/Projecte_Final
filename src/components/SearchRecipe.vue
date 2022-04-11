@@ -32,8 +32,9 @@
         </div>
         <div class="p-2">
           <h4 class="font-bold text-base">Nutritional information:</h4>
-          <p>{{ ingredient.recipe.calories }} kcal</p>
+          <p>{{ Math.round(ingredient.recipe.calories) }} kcal</p>
         </div>
+        <button @click="url">Read more</button>
 
         <button
           class="border justify-end shadow-sm px-3 py-2 bg-lime-200 rounded-lg m-2"
@@ -82,6 +83,9 @@ export default {
       } finally {
         this.loading = false;
       }
+    },
+    url() {
+      return this.ingredient.recipe.url;
     },
   },
 

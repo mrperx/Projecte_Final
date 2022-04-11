@@ -13,6 +13,14 @@ export const useFavorites = defineStore("favorites", {
       this.favoriteRecipes.push(recipe);
       storeData("favorites", this.favoriteRecipes);
     },
+    delete(recipe) {
+      this.favoriteRecipes = this.favoriteRecipes.filter(
+        (favRecipe) => favRecipe.url !== recipe.url
+
+        //this.items.splice(recipe, 1);
+      );
+      storeData("favorites", this.favoriteRecipes);
+    },
     async get() {
       // obtener de Firebase
       this.favoriteRecipes = (await getData("favorites")) || [];

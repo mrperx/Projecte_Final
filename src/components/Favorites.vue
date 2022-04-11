@@ -16,9 +16,12 @@
         </div>
         <div class="p-2">
           <h4 class="font-bold text-base">Nutritional information:</h4>
-          <p>{{ recipe.calories }} kcal</p>
+          <p>{{ Math.round(recipe.calories) }} kcal</p>
         </div>
-        <button @click="removeElement(recipe)" class="px-3 py-2 text-lg">
+        <button
+          @click="removeElement(recipe)"
+          class="px-3 py-2 text-xl text-red-700"
+        >
           <i class="fa-solid fa-trash-can"></i>
         </button>
       </div>
@@ -42,12 +45,13 @@ export default {
   },
   methods: {
     addToFavorites(recipe) {
-      this.favoritesStore.favoriteRecipes.push(recipe);
+      this.favoritesStore.add(recipe);
     },
-  },
 
-  removeElement(index) {
-    this.items.splice(index, 1);
+    async removeElement(recipe) {
+      //fer un filter
+      this.favoritesStore.delete(recipe);
+    },
   },
 };
 </script>
