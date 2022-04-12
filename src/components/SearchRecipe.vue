@@ -1,6 +1,8 @@
 <template>
   <div>
-    <div v-if="loading">Loading...</div>
+    <div v-if="loading">
+      <img class="rounded-full h-24 w-24" src="/load.gif" />
+    </div>
     <div v-if="error" class="text-red-600">
       {{ error }}
     </div>
@@ -19,14 +21,12 @@
       </button>
     </div>
   </div>
-  <div
-    class="p-2 grid grid-cols-1 md:grid-cols-4 gap-3 mt-7 bg-gray-300 border shadow"
-  >
+  <div class="p-2 grid grid-cols-1 md:grid-cols-4 gap-3 mt-7 border shadow">
     <div v-for="ingredient in data?.hits" :key="ingredient">
-      <div class="bg-green-300">
-        <p>
+      <div class="bg-[#c8e8b0] rounded-md p-2">
+        <a>
           <img :src="ingredient.recipe.image" class="h-52 w-52 rounded-t-lg" />
-        </p>
+        </a>
         <p class="font-bold text-lg p-2">{{ ingredient.recipe.label }}</p>
         <div class="p-2">
           <h3 class="font-bold text-lg">Ingredients:</h3>
@@ -38,7 +38,11 @@
           <h4 class="font-bold text-base">Nutritional information:</h4>
           <p>{{ Math.round(ingredient.recipe.calories) }} kcal</p>
         </div>
-        <button @click="url">Read more</button>
+        <a
+          class="shadow-sm px-3 py-2 bg-[#70e6da] rounded-lg m-2"
+          v-bind:href="ingredient.recipe.url"
+          >Read more
+        </a>
 
         <button
           class="border justify-end shadow-sm px-3 py-2 bg-lime-200 rounded-lg m-2"

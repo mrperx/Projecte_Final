@@ -13,14 +13,12 @@ export const useCreate = defineStore("create", {
       this.createRecipes.push(recipe);
       storeData("create", this.createRecipes);
     },
-    // delete(recipe) {
-    //   this.createRecipes = this.createRecipes.filter(
-    //     (create) => create.lenght !== recipe.lenght
-
-    //     //this.items.splice(recipe, 1);
-    //   );
-    //   storeData("favorites", this.favoriteRecipes);
-    // },
+    delete(recipe) {
+      this.createRecipes = this.createRecipes.filter(
+        (create) => create.image !== recipe.image
+      );
+      storeData("create", this.createRecipes);
+    },
     async get() {
       // obtener de Firebase
       this.createRecipes = (await getData("create")) || [];
