@@ -25,6 +25,7 @@
           v-bind:href="recipe.url"
           >Read more
         </a>
+
         <button
           @click="removeElement(recipe)"
           class="px-3 py-2 text-xl text-red-700"
@@ -56,7 +57,7 @@ export default {
       this.favoritesStore.add(recipe);
     },
 
-    async removeEle(recipe) {
+    async removeElement(recipe) {
       //fer un filter
       this.favoritesStore.delete(recipe);
     },
