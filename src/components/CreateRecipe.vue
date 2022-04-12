@@ -22,9 +22,19 @@
           <div class="my-2">
             <div v-for="ingredient in ingredients" :key="ingredient">
               <div class="items-start grid grid-cols-2">
-                <div><input placeholder="Amount" class="border" /></div>
                 <div>
-                  <textarea placeholder="Ingredient" class="border"></textarea>
+                  <input
+                    v-model="ingredient.amount"
+                    placeholder="Amount"
+                    class="border"
+                  />
+                </div>
+                <div>
+                  <textarea
+                    v-model="ingredient.name"
+                    placeholder="Ingredient"
+                    class="border"
+                  ></textarea>
                 </div>
               </div>
             </div>
@@ -69,8 +79,8 @@ export default {
       image: "",
       title: "",
       ingredients: [],
-      // ingredient: "",
-      // amount: "",
+      name: "",
+      amount: "",
       steps: "",
     };
   },
@@ -89,7 +99,7 @@ export default {
       let recipe = {
         imatge: this.image,
 
-        ingredients: this.ingredients,
+        ingredients: [...this.ingredients],
 
         steps: this.steps,
       };
@@ -97,8 +107,8 @@ export default {
     },
     addtoIngredient() {
       let ingredient = {
-        ingredient: this.ingredient,
-        amount: this.amount,
+        name: "",
+        amount: "",
       };
       this.ingredients.push(ingredient);
     },
