@@ -24,6 +24,7 @@
 <script>
 import NavBar from "./components/NavBar.vue";
 import { useFavorites } from "./stores/favorites";
+import { useCreate } from "./stores/createRecipe";
 export default {
   name: "App",
   components: {
@@ -34,8 +35,14 @@ export default {
 
     return { favoritesStore };
   },
+  // setup() {
+  //   const createStore = useCreate();
+
+  //   return { createStore };
+  // },
   mounted() {
     this.favoritesStore.get();
+    // this.createStore.get();
   },
 };
 </script>

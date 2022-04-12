@@ -1,5 +1,5 @@
 <template>
-  <div class="container p-3 m-auto bg-slate-300">
+  <div class="container p-3 m-auto">
     <!-- <div v-if="loading">Loading...</div>
     <div v-if="error" class="text-red-600">
       {{ error }}
@@ -12,16 +12,16 @@
     </h2>
     <div class="grid grid-cols-1 md:grid-cols-3">
       <div
-        class="md:col-start-2 col-span-1 container bg-[url('/hojas.gif')] opacity-75 p-3 rounded shadow"
+        class="md:col-start-2 col-span-1 container bg-amber-50 bg-[url('/hojas.gif')] opacity-75 p-3 rounded-lg shadow-lg shadow-gray-200"
       >
         <div>
-          <h4 class="my-2">Title: <input v-model="title" class="border" /></h4>
-          Image: <input v-model="image" class="border my-2" />
+          <h4 class="my-2">Title <input v-model="title" class="border" /></h4>
+          Image <input v-model="image" class="border my-2" />
           <!-- //crear v-for per anar agregant ingredients i quantitat-->
           <h3>Ingredients</h3>
           <div class="my-2">
             <div v-for="ingredient in ingredients" :key="ingredient">
-              <div class="items-start grid grid-cols-2">
+              <div class="items-start grid my-2 grid-cols-1 xl:grid-cols-2 p-2">
                 <div>
                   <input
                     v-model="ingredient.amount"
@@ -40,7 +40,7 @@
             </div>
             <button
               @click="addtoIngredient"
-              class="text-lime-300 bg-white rounded-full shadow shadow-lime-100 hover:bg-green-200 w-8 h-8"
+              class="text-lime-400 rounded-full shadow shadow-lime-300 hover:bg-green-200 w-8 h-8"
             >
               <i class="fa-solid fa-circle-plus"></i>
             </button>

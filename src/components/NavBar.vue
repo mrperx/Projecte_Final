@@ -6,7 +6,7 @@
     <button class="hover:bg-green-200 rounded px-2 py-1">
       <RouterLink to="/create-recipe">Create Recipes</RouterLink>
     </button>
-    <button class="hover:bg-green-200 rounded px-2 py-1">
+    <button class="inline-block hover:bg-green-200 rounded px-2 py-1">
       <RouterLink to="/favorites">Favorites</RouterLink>
     </button>
     <button class="hover:bg-green-200 rounded px-2 py-1">
