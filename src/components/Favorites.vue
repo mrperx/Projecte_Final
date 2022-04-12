@@ -3,9 +3,9 @@
     Favorite recipes
   </h2>
 
-  <div class="p-2 grid grid-cols-1 md:grid-cols-4 gap-3 mt-7 bg-gray-300">
+  <div class="p-2 grid grid-cols-1 md:grid-cols-4 gap-3 mt-7">
     <div v-for="recipe in recipes" :key="recipe">
-      <div class="bg-green-300">
+      <div class="bg-[#c8e8b0] rounded-md p-2">
         <p>
           <img :src="recipe.image" class="h-52 w-52 rounded-t-lg" />
         </p>
@@ -21,7 +21,7 @@
           <p>{{ Math.round(recipe.calories) }} kcal</p>
         </div>
         <a
-          class="shadow-sm px-3 py-2 bg-cyan-200 rounded-lg m-2"
+          class="shadow-sm px-3 py-2 bg-[#70e6da] rounded-lg m-2"
           v-bind:href="recipe.url"
           >Read more
         </a>
