@@ -21,7 +21,7 @@
       </button>
     </div>
   </div>
-  <div class="p-2 grid grid-cols-1 md:grid-cols-4 gap-3 mt-7 border shadow">
+  <div class="p-2 grid grid-cols-1 md:grid-cols-4 gap-3 mt-7">
     <div v-for="ingredient in data?.hits" :key="ingredient">
       <div class="bg-[#c8e8b0] rounded-md p-2">
         <a>
@@ -39,6 +39,7 @@
           <p>{{ Math.round(ingredient.recipe.calories) }} kcal</p>
         </div>
         <a
+          target="_ blank"
           class="shadow-sm px-3 py-2 bg-[#70e6da] rounded-lg m-2"
           v-bind:href="ingredient.recipe.url"
           >Read more

@@ -1,9 +1,9 @@
 <template>
   <div>
     <h2 class="text-2xl text-lime-300 font-bold text-center">My Recipes</h2>
-    <div class="p-2 grid grid-cols-1 md:grid-cols-4 gap-3 mt-7 bg-gray-300">
-      <div v-for="(recipe, index) in recipesCreate" :key="recipe">
-        <div class="bg-green-300">
+    <div class="p-2 grid grid-cols-1 md:grid-cols-4 gap-3 mt-7">
+      <div v-for="recipe in recipesCreate" :key="recipe">
+        <div class="bg-[#c8e8b0] rounded-md p-2">
           <p>
             <img :src="recipe.image" class="h-52 w-52 rounded-t-lg" />
           </p>
