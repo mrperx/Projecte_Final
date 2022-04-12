@@ -2,16 +2,17 @@
   <div>
     <h2 class="text-2xl text-lime-300 font-bold text-center">My Recipes</h2>
     <div class="p-2 grid grid-cols-1 md:grid-cols-4 gap-3 mt-7 bg-gray-300">
-      <div v-for="i in recipe" :key="i">
+      <div v-for="recipe in recipesCreate" :key="recipe">
         <div class="bg-green-300">
           <p>
-            <img :src="i.image" class="h-52 w-52 rounded-t-lg" />
+            <img :src="recipe.image" class="h-52 w-52 rounded-t-lg" />
           </p>
-          <p class="font-bold text-lg p-2">{{ i.title }}</p>
+          <p class="font-bold text-lg p-2">{{ recipe.title }}</p>
           <div class="p-2">
             <h3 class="font-bold text-lg">Ingredients:</h3>
-            <p v-for="i in recipe.ingredients" :key="i">
-              {{ i }}
+            <p v-for="ing in recipe.ingredients" :key="ing">
+              {{ ing.name }}
+              {{ ing.amount }}
             </p>
           </div>
           <div class="p-2">

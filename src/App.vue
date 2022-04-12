@@ -32,17 +32,13 @@ export default {
   },
   setup() {
     const favoritesStore = useFavorites();
-
-    return { favoritesStore };
+    const createStore = useCreate();
+    return { favoritesStore, createStore };
   },
-  // setup() {
-  //   const createStore = useCreate();
 
-  //   return { createStore };
-  // },
   mounted() {
     this.favoritesStore.get();
-    // this.createStore.get();
+    this.createStore.get();
   },
 };
 </script>

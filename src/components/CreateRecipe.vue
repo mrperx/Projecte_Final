@@ -10,9 +10,9 @@
     >
       Create Recipe
     </h2>
-    <div class="grid grid-cols-1 md:grid-cols-3">
+    <div class="grid grid-cols-1 lg:grid-cols-3">
       <div
-        class="md:col-start-2 col-span-1 container bg-amber-50 bg-[url('/hojas.gif')] opacity-75 p-3 rounded-lg shadow-lg shadow-gray-200"
+        class="mt-5 lg:col-start-2 col-span-1 container bg-amber-50 bg-[url('/hojas.gif')] opacity-75 p-3 rounded-lg shadow-lg shadow-gray-200"
       >
         <div>
           <h4 class="my-2">Title <input v-model="title" class="border" /></h4>
