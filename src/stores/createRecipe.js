@@ -19,11 +19,11 @@ export const useCreate = defineStore("create", {
 
     //     //this.items.splice(recipe, 1);
     //   );
-    //   storeData("favorites", this.favoriteRecipes);
-    // },
+    // storeData("favorites", this.favoriteRecipes);
+
     async get() {
       // obtener de Firebase
-      this.createRecipes = (await getData("create")) || [];
+      this.createRecipes = await getData("create");
     },
   },
 });

@@ -10,7 +10,7 @@
           <p class="font-bold text-lg p-2">{{ recipe.title }}</p>
           <div class="p-2">
             <h3 class="font-bold text-lg">Ingredients:</h3>
-            <p v-for="i in recipe.ingredients" :key="i">
+            <p v-for="i in createRecipe.ingredients" :key="i">
               {{ i }}
             </p>
           </div>
@@ -45,7 +45,7 @@ export default {
   },
   methods: {
     addToCreate(recipe) {
-      this.createStore.add(recipe);
+      this.createStore.addCreate(recipe);
     },
   },
 };

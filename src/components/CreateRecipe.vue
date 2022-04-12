@@ -10,9 +10,9 @@
     >
       Create Recipe
     </h2>
-    <div class="grid grid-cols-3">
+    <div class="grid grid-cols-1 md:grid-cols-3">
       <div
-        class="col-start-2 col-span-1 container bg-[url('/hojas.gif')] opacity-50 p-3"
+        class="md:col-start-2 col-span-1 container bg-[url('/hojas.gif')] opacity-75 p-3 rounded shadow"
       >
         <div>
           <h4 class="my-2">Title: <input v-model="title" class="border" /></h4>
@@ -69,7 +69,8 @@ export default {
       image: "",
       title: "",
       ingredients: [],
-
+      // ingredient: "",
+      // amount: "",
       steps: "",
     };
   },
@@ -80,10 +81,8 @@ export default {
         image: "",
         title: "",
         ingredients: [],
-
         steps: "",
       };
-
       this.addtoIngredient();
     },
     addToCreate() {
