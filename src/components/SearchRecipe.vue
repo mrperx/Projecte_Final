@@ -50,6 +50,7 @@
         >
           Add Favorites
         </button>
+        <div v-if="addToFvorites">Save recipe!</div>
       </div>
     </div>
   </div>

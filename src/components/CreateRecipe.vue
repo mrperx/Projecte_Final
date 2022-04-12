@@ -105,7 +105,7 @@ export default {
       this.recipe = {
         image: "",
         title: "",
-        ingredients: [],
+        ingredients: [...this.ingredients],
         steps: "",
       };
     },
