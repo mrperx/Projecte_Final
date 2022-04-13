@@ -83,8 +83,8 @@ export default {
       image: "",
       title: "",
       ingredients: [],
-      name: "",
-      amount: "",
+      // name: "",
+      // amount: "",
       steps: "",
     };
   },
@@ -97,14 +97,13 @@ export default {
         steps: this.steps,
       };
       this.createStore.addCreate(recipe);
+      this.limpiarFormulario();
     },
     limpiarFormulario() {
-      this.recipe = {
-        image: "",
-        title: "",
-        ingredients: [...this.ingredients],
-        steps: "",
-      };
+      this.image = "";
+      this.title = "";
+      this.ingredients = [];
+      this.steps = "";
     },
     addtoIngredient() {
       let ingredient = {
@@ -114,8 +113,8 @@ export default {
       this.ingredients.push(ingredient);
     },
   },
-  // async mounted() {
-  //   this.limpiarFormulario();
-  // },
+  async mounted() {
+    this.limpiarFormulario();
+  },
 };
 </script>
