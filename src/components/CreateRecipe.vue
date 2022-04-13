@@ -56,13 +56,13 @@
             >
               Submit
             </button>
-            <button
+            <!-- <button
               type="reset"
               @click="limpiarFormulario()"
               class="border-2 shadow-md text-gray-600 border-red-500 rounded-lg bg-red-300 py-2 px-3"
             >
               Clean
-            </button>
+            </button> -->
           </div>
         </div>
       </div>
@@ -75,7 +75,6 @@ import { useCreate } from "../stores/createRecipe";
 export default {
   setup() {
     const createStore = useCreate();
-
     return { createStore };
   },
   name: "createRecipe",
@@ -89,14 +88,12 @@ export default {
       steps: "",
     };
   },
-
   methods: {
     addToCreate() {
       let recipe = {
         image: this.image,
         title: this.title,
         ingredients: [...this.ingredients],
-
         steps: this.steps,
       };
       this.createStore.addCreate(recipe);
