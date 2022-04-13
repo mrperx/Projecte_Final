@@ -3,12 +3,11 @@
     Favorite recipes
   </h2>
 
-  <div class="p-2 grid grid-cols-1 md:grid-cols-4 gap-3 mt-7">
+  <div class="p-2 grid grid-cols-1 md:grid-cols-4 gap-3 mt-7 mx-auto">
     <div v-for="recipe in recipes" :key="recipe">
       <div class="bg-[#c8e8b0] rounded-md p-2">
-        <p>
-          <img :src="recipe.image" class="h-52 w-52 rounded-t-lg" />
-        </p>
+        <img :src="recipe.image" class="h-52 w-52 rounded-t-lg" />
+
         <p class="font-bold text-lg p-2">{{ recipe.label }}</p>
         <div class="p-2">
           <h3 class="font-bold text-lg">Ingredients:</h3>

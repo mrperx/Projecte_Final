@@ -1,9 +1,9 @@
 <template>
   <div class="container p-3 m-auto">
-    <!-- <div v-if="loading">Loading...</div>
+    <div v-if="loading">Loading...</div>
     <div v-if="error" class="text-red-600">
       {{ error }}
-    </div> -->
+    </div>
 
     <h2
       class="text-center italic font-semibold text-lime-500 shadow-gray-400 font-serif text-xl"
@@ -39,7 +39,7 @@
           </div>
           <button
             @click="addtoIngredient"
-            class="text-lime-400 text-lg rounded-full shadow shadow-lime-300 hover:bg-green-200 w-8 h-8"
+            class="text-teal-600 text-lg rounded-full shadow shadow-teal-800 hover:bg-green-200 w-8 h-8 bg-white"
           >
             <i class="fa-solid fa-circle-plus"></i>
           </button>
@@ -83,13 +83,15 @@ export default {
       image: "",
       title: "",
       ingredients: [],
-      // name: "",
-      // amount: "",
+
       steps: "",
+      loading: false,
+      error: null,
     };
   },
   methods: {
     addToCreate() {
+      this.loading = true;
       let recipe = {
         image: this.image,
         title: this.title,
@@ -98,6 +100,7 @@ export default {
       };
       this.createStore.addCreate(recipe);
       this.limpiarFormulario();
+      this.loading = false;
     },
     limpiarFormulario() {
       this.image = "";
